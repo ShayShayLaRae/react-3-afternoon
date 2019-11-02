@@ -22,6 +22,7 @@ class App extends Component {
   
   componentDidMount() {
     axios.get('https://practiceapi.devmountain.com/api/posts').then( res => {
+      console.log(res.data);
       this.setState({ posts: res.data});
     })
 
@@ -49,7 +50,7 @@ class App extends Component {
 
     return (
       <div className='App-parent'>
-        <Header />
+        <Header/>
         <section className='App-content'>
           <Compose createPostFn={this.createPost} />
           {
